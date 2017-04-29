@@ -1,8 +1,4 @@
 //
-//  ViewController.swift
-//  SuperAwesomeSquares
-//
-//  Created by John Crossley on 26/04/2017.
 //  Copyright © 2017 John Crossley. All rights reserved.
 //
 
@@ -10,16 +6,102 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private let cellSize = 20
+    private var numberOfRows: Int!
+    private var numberOfColumns: Int!
+
+    private var grid = [[UIView]]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        numberOfRows = Int(view.frame.width) / cellSize
+        numberOfColumns = Int(view.frame.height) / cellSize
+
+
+        for column in 0...numberOfColumns {
+            var columns = [UIView]()
+
+            for row in 0...numberOfRows {
+                let cell = UIView()
+                cell.frame = CGRect(x: row * 20,
+                                    y: column * 20,
+                                    width: cellSize,
+                                    height: cellSize)
+
+                cell.backgroundColor = randomColor()
+                cell.layer.borderColor = UIColor.black.cgColor
+                cell.layer.borderWidth = 0.5
+                view.addSubview(cell)
+
+                columns.append(cell)
+            }
+
+            grid.append(columns)
+        }
+
+        view.addGestureRecognizer(
+            UIPanGestureRecognizer(target: self,
+                                   action: #selector(handlePan(gesture:))))
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private var selectedCell: UIView?
+
+    func handlePan(gesture: UIPanGestureRecognizer) {
+        let location = gesture.location(in: view)
+
+        let width = view.frame.width / CGFloat(numberOfRows)
+        let verticalIndex = Int(location.x / width)
+        let horizontalIndex = Int(location.y / width)
+
+        let cellView = grid[horizontalIndex][verticalIndex]
+
+        if selectedCell != cellView {
+            UIView.animate(withDuration: 0.5,
+                           delay: 0,
+                           usingSpringWithDamping: 1,
+                           initialSpringVelocity: 1,
+                           options: .curveEaseOut,
+                           animations: {
+
+                            self.selectedCell?.layer.transform = CATransform3DIdentity
+                            
+            }, completion: nil)
+        }
+
+        selectedCell = cellView
+
+        view.bringSubview(toFront: cellView)
+
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       usingSpringWithDamping: 1,
+                       initialSpringVelocity: 1,
+                       options: .curveEaseOut,
+                       animations: {
+
+                        cellView.layer.transform = CATransform3DMakeScale(3, 3, 3)
+
+        }, completion: nil)
+
+        if gesture.state == .ended {
+            UIView.animate(withDuration: 0.5,
+                           delay: 0.25,
+                           usingSpringWithDamping: 0.5,
+                           initialSpringVelocity: 0.5,
+                           options: .curveEaseOut, animations: {
+                cellView.layer.transform = CATransform3DIdentity
+            }, completion: { (_) in
+
+            })
+        }
     }
 
-
+    private func randomColor() -> UIColor {
+        let red = drand48()
+        let green = drand48()
+        let blue = drand48()
+        return UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1)
+    }
 }
 

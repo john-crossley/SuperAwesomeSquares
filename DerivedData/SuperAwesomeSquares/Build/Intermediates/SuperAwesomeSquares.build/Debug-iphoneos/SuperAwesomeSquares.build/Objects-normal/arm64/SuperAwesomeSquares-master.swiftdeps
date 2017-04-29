@@ -1,0 +1,7 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
+options: "518b6ed3eb683599cc4c3a18cb74693a"
+build_time: [546559449, 443325000]
+inputs:
+  "/Users/jonno/Desktop/SuperAwesomeSquares/SuperAwesomeSquares/ViewController.swift": [546559356, 0]
+  "/Users/jonno/Desktop/SuperAwesomeSquares/SuperAwesomeSquares/AppDelegate.swift": [546523141, 0]
+  "/Users/jonno/Desktop/SuperAwesomeSquares/SuperAwesomeSquares/Cell.swift": [546556929, 0]
