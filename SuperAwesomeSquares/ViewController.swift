@@ -6,34 +6,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private let cellSize = 20
     private var numberOfRows: Int!
     private var numberOfColumns: Int!
 
-    private var grid = [[UIView]]()
+    private var grid = [[Cell]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        numberOfRows = Int(view.frame.width) / cellSize
-        numberOfColumns = Int(view.frame.height) / cellSize
+        numberOfRows = Int(view.frame.width) / Cell.size
+        numberOfColumns = Int(view.frame.height) / Cell.size
 
 
         for column in 0...numberOfColumns {
-            var columns = [UIView]()
+            var columns = [Cell]()
 
             for row in 0...numberOfRows {
-                let cell = UIView()
-                cell.frame = CGRect(x: row * 20,
-                                    y: column * 20,
-                                    width: cellSize,
-                                    height: cellSize)
 
-                cell.backgroundColor = randomColor()
-                cell.layer.borderColor = UIColor.black.cgColor
-                cell.layer.borderWidth = 0.5
+                let cell = Cell(row: row, column: column, color: .color)
                 view.addSubview(cell)
-
                 columns.append(cell)
             }
 
@@ -97,11 +88,6 @@ class ViewController: UIViewController {
         }
     }
 
-    private func randomColor() -> UIColor {
-        let red = drand48()
-        let green = drand48()
-        let blue = drand48()
-        return UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1)
-    }
+    
 }
 

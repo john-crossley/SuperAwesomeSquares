@@ -157,8 +157,18 @@ SWIFT_CLASS("_TtC19SuperAwesomeSquares11AppDelegate")
 
 SWIFT_CLASS("_TtC19SuperAwesomeSquares4Cell")
 @interface Cell : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger size;)
++ (NSInteger)size SWIFT_WARN_UNUSED_RESULT;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+@interface UIColor (SWIFT_EXTENSION(SuperAwesomeSquares))
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull random;)
++ (UIColor * _Nonnull)random SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull greyScale;)
++ (UIColor * _Nonnull)greyScale SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class UIPanGestureRecognizer;

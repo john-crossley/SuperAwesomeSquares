@@ -13,6 +13,7 @@
 		9A66744A1EB0C30500D71C4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A6674491EB0C30500D71C4C /* Assets.xcassets */; };
 		9A66744D1EB0C30500D71C4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A66744B1EB0C30500D71C4C /* LaunchScreen.storyboard */; };
 		9A6674581EB0C30500D71C4C /* SuperAwesomeSquaresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6674571EB0C30500D71C4C /* SuperAwesomeSquaresTests.swift */; };
+		9A6BE6341EB4D9E600780E4D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6BE6331EB4D9E600780E4D /* UIColor+Extensions.swift */; };
 		9AF6DAD11EB146A1009CBD4D /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6DAD01EB146A1009CBD4D /* Cell.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		9A6674531EB0C30500D71C4C /* SuperAwesomeSquaresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperAwesomeSquaresTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6674571EB0C30500D71C4C /* SuperAwesomeSquaresTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperAwesomeSquaresTests.swift; sourceTree = "<group>"; };
 		9A6674591EB0C30500D71C4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A6BE6331EB4D9E600780E4D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		9AF6DAD01EB146A1009CBD4D /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				9A66744B1EB0C30500D71C4C /* LaunchScreen.storyboard */,
 				9A66744E1EB0C30500D71C4C /* Info.plist */,
 				9AF6DAD01EB146A1009CBD4D /* Cell.swift */,
+				9A6BE6331EB4D9E600780E4D /* UIColor+Extensions.swift */,
 			);
 			path = SuperAwesomeSquares;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				9A6674451EB0C30500D71C4C /* ViewController.swift in Sources */,
 				9A6674431EB0C30500D71C4C /* AppDelegate.swift in Sources */,
 				9AF6DAD11EB146A1009CBD4D /* Cell.swift in Sources */,
+				9A6BE6341EB4D9E600780E4D /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
