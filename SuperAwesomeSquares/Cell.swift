@@ -12,7 +12,7 @@ enum CellColor {
 class Cell : UIView {
     static var size: Int {
         get {
-            return 30
+            return 20
         }
     }
 
